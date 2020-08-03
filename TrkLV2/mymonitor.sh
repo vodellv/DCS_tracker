@@ -1,0 +1,1 @@
+camonitor Tracker:LV1:Status Tracker:LV2:Status Tracker:LV3:Status Tracker:LV4:Status Tracker:LV5:Status Tracker:LV6:Status Tracker:ACFail:Status Tracker:FanFail:Status Tracker:TempAlarm:Status Tracker:Station1:LVControl Tracker:S1A:LVControl Tracker:S1B:LVControl Tracker:S1C:LVControl Tracker:S1D:LVControl Tracker:S1E:LVControl Tracker:S1F:LVControl

@@ -1,0 +1,5 @@
+# include "base.dbd"
+# local menu, record, device, driver, breakpoint definitions
+device(bi,CONSTANT,devBiTracker,"LVMonitor")
+device(bo,CONSTANT,devBoTracker,"LVControl")
+device(ai,CONSTANT,devaiTracker,"VoltCurrentMonitor")

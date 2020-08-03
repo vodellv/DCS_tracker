@@ -1,0 +1,312 @@
+#LV status bit. For LV1, there are 6 modules each powering 2 panels
+#Each module has 1 "Power good" status bit
+# mapping to BBB is the following:
+#
+# Output A P8‐7
+# Output B P8‐9
+# Output C P8‐11
+# Output D P8‐13
+# Output E P8‐8
+# Output F P8‐10
+#
+#P8-7 =>  gpio2[2] => gpio (2+64) = gpio66
+#P8-9 =>  gpio2[5] => gpio (5+64) = gpio69 
+#P8-11 => gpio1[13] => gpio (13+32) = gpio45
+#P8-13 => gpio0[23] => gpio (0+23) = gpio23
+#P8-8 =>  gpio2[3] => gpio (3+64) = gpio67
+#p8-10 => gpio2[4]] => gpio (4+64) = gpio68
+
+
+record(bi, "Tracker:LV1:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"66")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:LV2:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"69")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:LV3:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"45")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:LV4:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"23")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:LV5:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"67")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:LV6:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"68")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+
+# AC Fail P8‐12
+# Fan Fail P8‐16
+# Temperature Alarm P8‐18
+#P8-12 =>  gpio1[12] => gpio (12+32) = gpio44
+#P8-16 => gpio1[14] => gpio (14+32) = gpio46
+#P8-18 => gpio2[1] => gpio (1+64) = gpio65
+record(bi, "Tracker:ACFail:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"44")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:FanFail:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"46")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bi, "Tracker:TempAlarm:Status")
+{
+        field(DTYP,"LVMonitor")
+        field(INP,"65")
+        field(SCAN,".5 second")
+        field(ZNAM,"NOT_GOOD")
+        field(ONAM,"Good")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+# output records
+# Global – Station Power P8‐25 => gpio1[0] => gpio (0+32) = gpio32
+# Panel Pairs
+# Output A P9‐16 => gpio1[19]=> gpio (19+32) = gpio51
+# Output B P9‐24 => gpio0[15] => gpio (15+0) = gpio15
+# Output C P9‐26 => gpio0[14] => gpio (14+0) = gpio14
+# Output D P9‐28 => gpio3[17] => gpio (17+ 96) = gpio113
+# Output E P9‐42 => gpio3[18] => gpio (18 + 96) = gpio114
+# Output F P9‐11 => gpio0[30] => gpio (30 + 0) = gpio30
+
+record(bo, "Tracker:Station1:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"32")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bo, "Tracker:S1A:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"51")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bo, "Tracker:S1B:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"15")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bo, "Tracker:S1C:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"14")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bo, "Tracker:S1D:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"113")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bo, "Tracker:S1E:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"114")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+record(bo, "Tracker:S1F:LVControl")
+{
+        field(DTYP,"LVControl")
+        field(OUT,"30")
+        field(SCAN,".5 second")
+        field(ZNAM,"Off")
+        field(ONAM,"On")
+        field(ZSV,"MAJOR")
+        field(OSV,"NO_ALARM")
+        field(COSV,"NO_ALARM")
+}
+# i2c records
+# there are three ADCs connected to i2cbus 2 (or 1 in s/w)
+# each has their own address hardwired.
+# The 2nd number is the channel number. The full syntax for the 
+#channel number is 
+#ADC 0010100: (0x14)
+#000 = voltage 48 section A = 0xA0 (note this is 0xA8 for neg. polarity (i.e. if first channel is -)
+#001 = current 48 section A = 0xA1
+#010 = voltage 12 section A = 0xA2
+#011 = current 12 section A = 0xA3
+#100 = voltage 48 section B = 0xA4
+#101 = current 48 section B = oxA5
+#110 = voltage 12 section B = 0xA6
+#111 = current 12 section B = 0xA7
+# 
+#ADC 0010110:(0x16)
+#000 = voltage 48 section C = 0xA0 (note this is 0xA8 for neg. polarity (i.e. if first channel is -)
+#001 = current 48 section C = 0xA1
+#010 = voltage 12 section C = 0xA2
+#011 = current 12 section C = 0xA3
+#100 = voltage 48 section D = 0xA4
+#101 = current 48 section D = 0xA5
+#110 = voltage 12 section D = 0xA6
+#111 = current 12 section D = 0xA7
+# 
+#ADC 0100110: (0x26)
+#000 = voltage 48 section E = 0xA0 (note this is 0xA8 for neg. polarity (i.e. if first channel is -)
+#001 = current 48 section E = 0xA1
+#010 = voltage 12 section E = 0xA2
+#011 = current 12 section E = 0xA3
+#100 = voltage 48 section F = 0xA4
+#101 = current 48 section F = 0xA5
+#110 = voltage 12 section F = 0xA6
+#111 = current 12 section F = 0xA7
+
+record(ai, "Tracker:S1A:LV48")
+{
+        field(DTYP,"VoltCurrentMonitor")
+	field(INP,"0x14A0")
+        field(SCAN,".5 second")
+	field(EGU,"Volts")
+	field(DESC,"Station 1A 48V voltage monitor")
+	field(HIHI,"50")
+	field(HIGH,"49")
+	field(LOW,"47")
+	field(LOLO,"45")
+	field(LLSV, MAJOR)
+	field(LSV, MINOR)
+	field(HSV, MINOR)
+	field(HHSV, MAJOR)
+}
+record(ai, "Tracker:S1A:LC48")
+{
+        field(DTYP,"VoltCurrentMonitor")
+        field(INP,"0x14A1")
+        field(SCAN,".5 second")
+	field(EGU,"Amps")
+	field(DESC,"Station 1A 48V current monitor")
+	field(HIHI,"50")
+	field(HIGH,"49")
+	field(LOW,"47")
+	field(LOLO,"45")
+	field(LLSV, MAJOR)
+	field(LSV, MINOR)
+	field(HSV, MINOR)
+	field(HHSV, MAJOR)
+}
+record(ai, "Tracker:S1A:LV12")
+{
+
+        field(DTYP,"VoltCurrentMonitor")
+        field(INP,"0x14A2")
+        field(SCAN,".5 second")
+	field(EGU,"Volts")
+	field(DESC,"Station 1A 12V voltage monitor")
+	field(HIHI,"15")
+	field(HIGH,"13")
+	field(LOW,"10")
+	field(LOLO,"8")
+	field(LLSV, MAJOR)
+	field(LSV, MINOR)
+	field(HSV, MINOR)
+	field(HHSV, MAJOR)
+}
+record(ai, "Tracker:S1A:LC12")
+{
+        field(DTYP,"VoltCurrentMonitor")
+        field(INP,"0x14A3")
+        field(SCAN,".5 second")
+	field(EGU,"Amps")
+	field(DESC,"Station 1A 12V current monitor")
+	field(HIHI,"50")
+	field(HIGH,"49")
+	field(LOW,"47")
+	field(LOLO,"45")
+	field(LLSV, MAJOR)
+	field(LSV, MINOR)
+	field(HSV, MINOR)
+	field(HHSV, MAJOR)
+}

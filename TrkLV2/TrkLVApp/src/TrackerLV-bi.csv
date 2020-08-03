@@ -1,0 +1,39 @@
+# For the LV box, mapping to BBB is the following:
+#
+# Output A P8‐7
+# Output B P8‐9
+# Output C P8‐11
+# Output D P8‐13
+# Output E P8‐8
+# Output F P8‐10
+#
+#P8-7 =>  gpio2[2] => gpio (2+64) = gpio66
+#P8-9 =>  gpio2[5] => gpio (5+64) = gpio69
+#P8-11 => gpio1[13] => gpio (13+32) = gpio45
+#P8-13 => gpio0[23] => gpio (0+23) = gpio23
+#P8-8 =>  gpio2[3] => gpio (3+64) = gpio67
+#p8-10 => gpio2[4]] => gpio (4+64) = gpio68
+#The gpio no. is put into the input field
+
+Subsystem,loc,pvar,EGU,ZNAM,ONAM,ZSV,OSV,COSV,INP,SCAN,DTYP,DESC
+#
+#repeat following for 18 stations
+#
+Tracker,Station1:Panels1_2,lv_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,66,Passive,LVMonitor,Station1Panels1_2
+Tracker,Station1:Panels3_4,lv_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,69,Passive,LVMonitor,Station1Panels3_4
+Tracker,Station1:Panels5_6,lv_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,45,Passive,LVMonitor,Station1Panels5_6
+Tracker,Station1:Panels7_8,lv_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,23,Passive,LVMonitor,Station1Panels7_8
+Tracker,Station1:Panels9_10,lv_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,67,Passive,LVMonitor,Station1Panels9_10
+Tracker,Station1:Panels11_12,lv_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,68,Passive,LVMonitor,Station1Panels11_12
+#
+#repeat following for 18 stations
+#
+# AC Fail P8‐12
+# Fan Fail P8‐16
+# Temperature Alarm P8‐18
+#P8-12 =>  gpio1[12] => gpio (12+32) = gpio44
+#P8-16 => gpio1[14] => gpio (14+32) = gpio46
+#P8-18 => gpio2[1] => gpio (1+64) = gpio65
+Tracker,Station1:LVBox,temperature_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,65,Passive,LVMonitor,Station1
+Tracker,Station1:LVBox,fans_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,46,Passive,LVMonitor,Station1
+Tracker,Station1:LVBox,AC_ok,,NOT_OK,OK,MAJOR,NO_ALARM,,44,Passive,LVMonitor,Station1
